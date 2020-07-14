@@ -5,7 +5,12 @@ import Pagination from './common/pagination'
 
 class Movies extends Component {
     state = {
-        movies: getMovies()
+        movies: getMovies(),
+        pageSize: 4
+    }
+
+    handlePageChange = (page) => {
+        console.log(page)
     }
 
     handleLike = (movie) => {                       /* this is how we update the view/UI. later for changes in database, when calling HTTP services this is where we call the server to persist the changes */
@@ -54,7 +59,7 @@ class Movies extends Component {
                         ))}
                     </tbody>
                 </table>
-                <Pagination />
+                <Pagination itemsCount={movieLenght} pageSize={this.state.pageSize} onPageChange={this.handlePageChange} />
             </div>
         );
     }
