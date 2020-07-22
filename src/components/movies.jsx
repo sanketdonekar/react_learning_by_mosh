@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Like from './common/like'
 import { getMovies } from '../services/fakeMovieService'
-import { getGenres, genres } from '../services/fakeGenreService'
+import { getGenres } from '../services/fakeGenreService'
 import Pagination from './common/pagination'
 import { paginate } from '../utils/paginate'
 import ListGroup from './common/listGroup'
