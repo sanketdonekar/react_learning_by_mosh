@@ -35,6 +35,17 @@ class Counter extends Component {
     //     console.log("Increment clicked", this.state.count)    /* we'll notice that "this" is undefined here, we don't have access to the state proprty */
     // }                                                         /* this can be sloved using bind method or using arrow function for event handling*/
 
+    badgeClasses() {                                         /* seperate method to handle badge class w.r.t the count value */
+        let badgeClasses = "badge m-2 badge-";
+        badgeClasses += this.props.counter.value === 0 ? "warning" : "primary";
+        return badgeClasses;
+    }
+
+    formatCount() {                                         /* seperate method to handle count value */
+        const { value: count } = this.props.counter
+        return count === 0 ? 'Zero' : count
+    }
+
     render() {
         // console.log(this.props)
         return (
@@ -70,16 +81,6 @@ class Counter extends Component {
         );
     }
 
-    badgeClasses() {                                         /* seperate method to handle badge class w.r.t the count value */
-        let badgeClasses = "badge m-2 badge-";
-        badgeClasses += this.props.counter.value === 0 ? "warning" : "primary";
-        return badgeClasses;
-    }
-
-    formatCount() {                                         /* seperate method to handle count value */
-        const { value: count } = this.props.counter
-        return count === 0 ? 'Zero' : count
-    }
 }
 
 export default Counter;

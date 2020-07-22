@@ -21,6 +21,8 @@ import React from 'react'
 // if the component has only single render method n doesn't have any helper methods, state, 
 // instead we have only props. so this can be converted into stateless functional component 
 
+// Note : We can not use lyfe-cycle hooks in state-less functional component, its only used in class component
+
 
 
 const Navbar = /*(props)*/({ totalCounters }) => {             /*using object distructuring to distructure props argument */
